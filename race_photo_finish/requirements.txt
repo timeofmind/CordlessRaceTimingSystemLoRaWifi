@@ -1,0 +1,24 @@
+# requirements.txt — Photo-finish timing system
+#
+# Install on Raspberry Pi OS (Bookworm) with:
+#   pip install -r requirements.txt --break-system-packages
+#
+# picamera2 is pre-installed on Raspberry Pi OS; if it's missing:
+#   sudo apt install -y python3-picamera2
+#
+# For development on a non-Pi machine, picamera2 can be omitted —
+# the system will automatically fall back to simulation mode.
+
+numpy>=1.26
+opencv-python-headless>=4.9   # headless = no GTK deps; use opencv-python if you want cv2.imshow
+
+# Step 3 — UDP transmitter (stdlib socket; no pip package needed)
+
+# Step 4 — Web UI (uncomment when ready):
+# flask>=3.0
+# fastapi>=0.110
+# uvicorn[standard]>=0.29
+# python-multipart>=0.0.9
+
+# Step 2 — LoRa / serial (uncomment when wiring up the ESP32):
+# pyserial>=3.5
